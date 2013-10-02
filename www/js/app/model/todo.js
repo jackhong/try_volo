@@ -1,9 +1,9 @@
 // Todo Model
-// ----------
+//
 // Our basic **Todo** model has `title`, `order`, and `completed` attributes.
 
 define(['underscore', 'backbone'], function(_, Backbone) {
-  var Todo = Backbone.Model.extend({    
+  var Todo = Backbone.Model.extend({
     // Default attributes ensure that each todo created has `title` and `completed` keys.
     defaults: {
       title: '',

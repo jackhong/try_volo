@@ -1,14 +1,13 @@
 // Todo Collection
-// ---------------
-
+//
 // The collection of todos is backed by *localStorage* instead of a remote
 // server.
 
 define([
   'underscore',
   'backbone',
-  'backbone.localStorage', 
-  'app/models/todo'], function(_, Backbone, LocalStorage, Todo) {
+  'backbone.localStorage',
+  'app/model/todo'], function(_, Backbone, LocalStorage, Todo) {
 
   var TodoList = Backbone.Collection.extend({
     // Reference to this collection's model.

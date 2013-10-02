@@ -12,4 +12,8 @@ define(function (require) {
 		console.log(JSON.stringify(Todos));
 
 	});*/
+	require(['app/view/app'], function(AppView) {
+    console.log(typeof(AppView));
+    new AppView();
+  });
 });
