@@ -30,7 +30,7 @@ define(['zepto', 'underscore', 'backbone', 'app/collection/todos', 'app/view/tod
       this.listenTo(Todos, 'add', this.addOne);
       this.listenTo(Todos, 'reset', this.addAll);
       this.listenTo(Todos, 'change:completed', this.filterOne);
-      this.listenTo(Todos,'filter', this.filterAll);
+      this.listenTo(Todos, 'filter', this.filterAll);
       this.listenTo(Todos, 'all', this.render);
 
       Todos.fetch();
@@ -79,7 +79,7 @@ define(['zepto', 'underscore', 'backbone', 'app/collection/todos', 'app/view/tod
     },
 
     filterAll : function () {
-      app.Todos.each(this.filterOne, this);
+      Todos.each(this.filterOne, this);
     },
 
     // Generate the attributes for a new Todo item.
@@ -102,14 +102,14 @@ define(['zepto', 'underscore', 'backbone', 'app/collection/todos', 'app/view/tod
     },
 
     clearCompleted: function() {
-      _.invoke(app.Todos.completed(), 'destroy');
+      _.invoke(Todos.completed(), 'destroy');
       return false;
     },
 
     toggleAllComplete: function() {
       var completed = this.allCheckbox.checked;
 
-      app.Todos.each(function( todo ) {
+      Todos.each(function( todo ) {
         todo.save({
           'completed': completed
         });

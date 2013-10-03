@@ -12,8 +12,12 @@ define(function (require) {
 		console.log(JSON.stringify(Todos));
 
 	});*/
-	require(['app/view/app'], function(AppView) {
+	require(['app/view/app', 'app/router'], function(AppView, Workspace) {
     console.log(typeof(AppView));
+    console.log(Backbone.VERSION);
+    console.log(_.VERSION);
     new AppView();
+    new Workspace();
+    Backbone.history.start();
   });
 });
